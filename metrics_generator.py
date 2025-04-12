@@ -15,13 +15,17 @@ llm_cmatrix = [[1, 0, 1, 0, 2, 0, 1],
                [0, 0, 0, 0, 1, 4, 0],
                [0, 0, 1, 0, 0, 0, 4]]
 
+mlp_llm_samples = [[0, 0, 1, 0, 1, 0, 3], [0, 0, 3, 0, 1, 0, 1], [0, 0, 1, 0, 0, 0, 4], [0, 0, 0, 1, 1, 0, 3], [0, 0, 0, 0, 1, 1, 3], [0, 0, 2, 2, 1, 0, 0], [0, 0, 1, 0, 0, 0, 4]]
+
+rnn_llm_samples = [[0, 0, 0, 2, 0, 0, 3], [0, 0, 1, 2, 1, 0, 1], [0, 0, 0, 4, 0, 0, 1], [0, 0, 0, 4, 0, 0, 1], [0, 0, 1, 3, 0, 0, 1], [0, 0, 0, 4, 1, 0, 0], [0, 0, 2, 2, 0, 0, 1]]
+
 plt.figure(figsize=(10, 8))
-sns.heatmap(llm_cmatrix, annot=True, fmt='d', cmap='Blues', 
+sns.heatmap(rnn_llm_samples, annot=True, fmt='d', cmap='Blues', 
             xticklabels=classes, 
             yticklabels=classes)
 plt.xlabel('Predicted')
 plt.ylabel('True')
 plt.title('Confusion Matrix')
 plt.tight_layout()
-plt.savefig('llm_confusion_matrix.png')
+plt.savefig('rnn_llm_samples_matrix.png')
 plt.show()
